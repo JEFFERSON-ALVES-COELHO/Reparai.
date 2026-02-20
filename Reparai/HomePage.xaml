@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Reparai.HomePage">
+
+   
+        
+            <VerticalStackLayout
+            Padding="24"
+            Spacing="20"
+            HorizontalOptions="Fill"
+            VerticalOptions="Start">
+
+          
+                <Label
+                Text="Reparai"
+                FontSize="32"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="#1F2937" />
+
+               
+                <Label
+                Text="Reporte problemas urbanos com Inteligencia Artificial"
+                FontSize="18"
+                HorizontalTextAlignment="Center"
+                TextColor="#4B5563" />
+
+           
+                <Label
+                Text="Reporte buracos, iluminacao quebrada, lixo irregular e outros problemas urbanos em Sao Paulo. Seja protagonista na transformacao do seu bairro usando tecnologia e IA."
+                FontSize="14"
+                TextColor="#6B7280"
+                HorizontalTextAlignment="Center" />
+
+              
+                <Image
+                Source="opengraph_image.png"
+                Aspect="AspectFit"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+
+            <Button
+                Text="Reportar Problema"
+                BackgroundColor="#2563EB"
+                TextColor="White"
+                CornerRadius="12"
+                HeightRequest="48"
+                HorizontalOptions="Fill"
+                Clicked="OnReportarProblemaClicked" />
+
+            <Button
+                Text="Acompanhar Relatos"
+                BackgroundColor="#E5E7EB"
+                TextColor="#111827"
+                CornerRadius="12"
+                HeightRequest="48"
+                HorizontalOptions="Fill"
+                Clicked="OnAcompanharRelatosClicked"/>
+
+    </VerticalStackLayout>
+        
+
+
+
+
+</ContentPage>

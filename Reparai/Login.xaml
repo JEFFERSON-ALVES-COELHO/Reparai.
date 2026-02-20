@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="Reparai.Login"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource Cotton}">
+            
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="{StaticResource Cotton}">
+
+        <Label Text="Bem Vindo ao Reparai!" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,0,0,30" />
+        <Grid RowDefinitions="*,*,*,*,*,*,*" VerticalOptions="Center" WidthRequest="400">
+            
+            <!--CAMPO DE TEXTO EMAIL-->
+            <Label Grid.Row="0" Text="E-mail"  />
+            <Entry Grid.Row="1" x:Name="Email" Placeholder="ex. abcde@gmail.com.br"
+                   Margin="0,0,0,40"/>
+
+            <!--CAMPO DE TEXTO SENHA-->
+            <Label Grid.Row="2" Text="Senha"  />
+            <Entry Grid.Row="3" x:Name="Senha" Placeholder="********" 
+                   Margin="0,0,0,40"/>
+
+            <Label VerticalOptions="Center" Grid.Row="6" Text="Caso não possua uma conta, cadastre-se já!" FontSize="15" TextColor="Black" Margin="50,0,0,30"/>
+
+            <!--BOTÃO ENTRAR-->
+            <Button Grid.Row="4" Text="Entrar" Margin="0,0,0,30" BackgroundColor="{StaticResource GreenFlag}"  />
+
+            <!--BOTÃO CADASTRAR-->
+            <Button Grid.Row="5" Text="Cadastrar" Margin="0,0,0,30" Clicked="OnCadastrarClicked" BackgroundColor="{StaticResource GreenVacation}" />
+
+
+        </Grid>
+
+    </VerticalStackLayout>
+
+
+
+
+</ContentPage>
+
