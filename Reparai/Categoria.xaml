@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Reparai.Views.CategoriaPage"
+    Title="Categorias">
+
+    <VerticalStackLayout Padding="20" Spacing="16">
+
+        <Label
+            Text="Selecione a categoria do problema"
+            FontSize="20"
+            FontAttributes="Bold"
+            HorizontalTextAlignment="Center" />
+
+        <CollectionView
+            x:Name="CategoriasCollection"
+            SelectionMode="Single"
+            SelectionChanged="OnCategoriaSelecionada">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Padding="12"
+                        Margin="6"
+                        Stroke="#E5E7EB"
+                        StrokeThickness="1"
+                        BackgroundColor="#F3F4F6">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="12"/>
+                        </Border.StrokeShape>
+
+                        <VerticalStackLayout Spacing="8">
+                            <Label
+                                Text="{Binding Nome}"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center" />
+
+                            <Label
+                                Text="{Binding Descricao}"
+                                FontSize="12"
+                                TextColor="#6B7280"
+                                HorizontalTextAlignment="Center" />
+                        </VerticalStackLayout>
+
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>
+

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../../apiAutenticacao-master/apiAutenticacao-master/apiAutenticacao.csproj" />
+  <Project Path="Reparai/Reparai.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>
