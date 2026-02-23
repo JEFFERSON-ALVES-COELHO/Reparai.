@@ -21,7 +21,6 @@ namespace Reparai
         public Login()
         {
             InitializeComponent();
-           
         }
         async void OnCadastrarClicked(object sender, EventArgs e)
         {

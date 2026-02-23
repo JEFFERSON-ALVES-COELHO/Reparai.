@@ -3,45 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Reparai.HomePage">
 
-   
-        
-            <VerticalStackLayout
+
+
+    <VerticalStackLayout
             Padding="24"
             Spacing="20"
             HorizontalOptions="Fill"
             VerticalOptions="Start">
 
-          
-                <Label
+
+        <Label
                 Text="Reparai"
                 FontSize="32"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
                 TextColor="#1F2937" />
 
-               
-                <Label
+
+        <Label
                 Text="Reporte problemas urbanos com Inteligencia Artificial"
                 FontSize="18"
                 HorizontalTextAlignment="Center"
                 TextColor="#4B5563" />
 
-           
-                <Label
+
+        <Label
                 Text="Reporte buracos, iluminacao quebrada, lixo irregular e outros problemas urbanos em Sao Paulo. Seja protagonista na transformacao do seu bairro usando tecnologia e IA."
                 FontSize="14"
                 TextColor="#6B7280"
                 HorizontalTextAlignment="Center" />
 
-              
-                <Image
+
+        <Image
                 Source="opengraph_image.png"
                 Aspect="AspectFit"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
 
-            <Button
+        <Button
                 Text="Reportar Problema"
                 BackgroundColor="#2563EB"
                 TextColor="White"
@@ -50,7 +50,7 @@
                 HorizontalOptions="Fill"
                 Clicked="OnReportarProblemaClicked" />
 
-            <Button
+        <Button
                 Text="Acompanhar Relatos"
                 BackgroundColor="#E5E7EB"
                 TextColor="#111827"
@@ -60,7 +60,7 @@
                 Clicked="OnAcompanharRelatosClicked"/>
 
     </VerticalStackLayout>
-        
+
 
 
 
