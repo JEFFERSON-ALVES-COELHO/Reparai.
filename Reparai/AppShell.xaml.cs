@@ -9,6 +9,7 @@
             //Registering the route for the Login page
             Routing.RegisterRoute(nameof(Login), typeof(Login));
             Routing.RegisterRoute(nameof(Cadastro), typeof(Cadastro));
+            Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
         }
     }

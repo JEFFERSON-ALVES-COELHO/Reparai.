@@ -16,12 +16,13 @@ namespace Reparai
 
         }
 
-        async void OnCadastrarClicked(object sender, EventArgs e)
-
+        private async void OnCadastrarClicked(object sender, EventArgs e)
         {
+            // Aqui você salva o cadastro
 
-            await Shell.Current.GoToAsync("HomePage");
+            await DisplayAlertAsync("Sucesso", "Cadastro realizado com sucesso!", "OK");
 
+            await Shell.Current.GoToAsync("//MainPage");
         }
 
     }
