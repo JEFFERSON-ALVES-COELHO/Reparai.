@@ -6,6 +6,7 @@ using System.Linq;
 using Microsoft.Maui.Controls;
 using Reparai.DTO;
 using Reparai.Services;
+using System.Linq.Expressions;
 
 namespace Reparai
 {
@@ -30,19 +31,24 @@ namespace Reparai
         }
 
 
-        async void OnEntrarClicked(object sender, EventArgs e)
-        {
+        async void OnEntrarClicked(object sender, EventArgs e) 
+        { 
 
-            string email = Email.Text;
-            string senha = Senha.Text;
+        DisplayLoding();
+        string email = Email.Text;
+        string senha = Senha.Text;
 
             if (String.IsNullOrEmpty(email) || String.IsNullOrEmpty(senha))
             {
                 await DisplayAlertAsync("Campos obrigatórios", "Por favor, preencha todos os campos.", "OK");
+        DisplayLoding();
                 return;
 
-            }
-
+        }
+        
+            try// Tentar executar a inscrição
+            {
+            
             RequestLoginDTO dadosUsuarioForm = new RequestLoginDTO
             {
                 Email = email,
@@ -50,7 +56,7 @@ namespace Reparai
 
             };
 
-            ResponseLoginDTO respostaLogin = await _authservice.LoginAsync(dadosUsuarioForm);
+    ResponseLoginDTO respostaLogin = await _authservice.LoginAsync(dadosUsuarioForm);
 
 
 
@@ -60,14 +66,35 @@ namespace Reparai
                 return;
             }
 
-            await DisplayAlertAsync("Erro de login", "Dados inválidos. Verifique seus dados e tente novamente", "Ok");
+           await DisplayAlertAsync("Erro de login", "Dados inválidos. Verifique seus dados e tente novamente", "Ok");
+
+
+
+            }
+            catch (Exception erro)//Capturar o erro caso ocorra
+            {
+                    throw new Exception($"Ocorreu um erro durante o login: {erro.Message}");
+                }
+            finally { //Sempre executa!!
+                    DisplayLoding();
+
+                }
+
 
 
 
 
         }
 
-    }
+        public void DisplayLoding()
+        {
+
+            btnEntrar.IsVisible = !btnEntrar.IsVisible;
+            loading.IsVisible = !loading.IsVisible;
+
+        }
+
+        }
 
 
 }

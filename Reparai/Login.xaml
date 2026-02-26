@@ -6,10 +6,14 @@
     BackgroundColor="{StaticResource Cotton}">
             
     <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="{StaticResource Cotton}">
+            <!-- Logo -->
+            <Image Source="reparai.jpg" Aspect="AspectFit" HeightRequest="180" HorizontalOptions="Center" />
 
-        <Label Text="Bem Vindo ao Reparai!" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,0,0,30" />
-        <Grid RowDefinitions="*,*,*,*,*,*,*" VerticalOptions="Center" WidthRequest="400">
+             <!-- Título -->
+            <Label Text="Bem Vindo ao Reparai!" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,0,0,30" />
+            <Grid RowDefinitions="*,*,*,*,*,*,*" VerticalOptions="Center" WidthRequest="400">
             
+                       
             <!--CAMPO DE TEXTO EMAIL-->
             <Label Grid.Row="0" Text="E-mail"  />
             <Entry Grid.Row="1" x:Name="Email" Placeholder="ex. abcde@gmail.com.br"
@@ -23,7 +27,12 @@
             <Label VerticalOptions="Center" Grid.Row="6" Text="Caso não possua uma conta, cadastre-se já!" FontSize="15" TextColor="Black" Margin="50,0,0,30"/>
 
             <!--BOTÃO ENTRAR-->
-            <Button Clicked="OnEntrarClicked" Grid.Row="4" Text="Entrar" Margin="0,0,0,30" BackgroundColor="{StaticResource GreenFlag}"  />
+            <Button x:Name="btnEntrar" IsVisible="True" Clicked="OnEntrarClicked" Grid.Row="4" Text="Entrar" Margin="0,0,0,30" BackgroundColor="{StaticResource GreenFlag}"  />
+            
+            <!--INDICADOR DE ATIVIDADE-->
+            <ActivityIndicator IsRunning="True" IsVisible="False" x:Name="loading" Color="{StaticResource GreenFlag}" HeightRequest="40" WidthRequest="40"  />
+
+            
 
             <!--BOTÃO CADASTRAR-->
             <Button Grid.Row="5" Text="Cadastrar" Margin="0,0,0,30" Clicked="OnCadastrarClicked" BackgroundColor="{StaticResource GreenVacation}" />
