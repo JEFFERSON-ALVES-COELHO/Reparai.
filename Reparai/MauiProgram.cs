@@ -9,9 +9,15 @@ namespace Reparai
         {
             var builder = MauiApp.CreateBuilder();
 
-            builder.Services.AddSingleton<HttpClient>();
-            builder.Services.AddSingleton<AuthService>();
+            builder.Services.AddSingleton<HttpClient>(sp =>
+            {
+                return new HttpClient
+                {
+                    BaseAddress = new Uri("https://localhost:7177/")
+                };
+            });
 
+            builder.Services.AddSingleton<AuthService>();
 
             builder
                 .UseMauiApp<App>()
@@ -22,7 +28,7 @@ namespace Reparai
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
